@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Alta";
+}
+
+<h2>Crear Alimento</h2>
+<form action="/Alimentos/Alta" method="post">
+
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="Nombre" placeholder="D" required>
+    </div>
+
+    <div class="form-group">
+        <label>Peso</label>
+        <input type="number" class="form-control" name="Peso" placeholder="40" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+

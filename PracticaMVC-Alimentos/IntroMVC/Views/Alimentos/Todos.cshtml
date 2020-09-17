@@ -1,0 +1,33 @@
+﻿@using Entidades
+@model List<Alimento>
+@{
+    ViewBag.Title = "Lista de Alimentos";
+}
+
+<h2>Todos</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Modificar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Alimento a in Model)
+        {
+            <tr>
+                <th scope="row">@a.Id</th>
+                <td>@a.Nombre</td>
+                <td>@a.Peso</td>
+                <td><a class="btn btn-info" href="/Alimentos/Editar/@a.Id" role="button">Modificar</a></td>
+                <td><a class="btn btn-danger" href="/Alimentos/Borrar/@a.Id" role="button">Eliminar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr />
+<a class="btn btn-success" href="/Alimentos/Alta" role="button">Crear Nuevo</a>
